@@ -10,7 +10,7 @@ import BlogsPage from "./pages/Blogs";
 function App() {
   return (
     <div>
-      {/* <HomePage /> */}
+      {<HomePage />}
       <BlogsPage />
     </div>
   );

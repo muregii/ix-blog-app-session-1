@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}  from "react";
 import Navbar from "../../components/Navbar";
 import Heading from "../../components/Heading";
 import BlogList from "../../components/BlogList";
@@ -7,11 +7,15 @@ import Footer from "../../components/Footer";
 import "./index.css";
 
 const data = require("../../dummy-data.json");
-const blogs = data.blogPosts;
-const categories = data.categories;
+const blogsDummyData = data.blogPosts;
+const categoriesDummyData = data.categories;
 
 export default function BlogsPage() {
-  const CategoriesList = () => {
+
+  const[blogs, setBlogs] = useState(blogsDummyData)
+  const[categoryId, setCategoryId] = useState()
+
+    const CategoriesList = () => {
     return categories.map((category, index) => {
       return (
         // categoryId === category.id.toString() ? (
